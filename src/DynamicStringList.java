@@ -1,10 +1,4 @@
 public class DynamicStringList implements StringList {
-    public String[] arr;
-    public int acutalLength = 0;
-
-    public DynamicStringList() {
-        arr = new String[10];
-    }
 
     /**
      * Retrieves the string at the specified index in the list.
