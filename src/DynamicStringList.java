@@ -1,6 +1,12 @@
 import javax.imageio.IIOException;
 
 public class DynamicStringList implements StringList {
+    public String[] arr;
+    public int acutalLength =0;
+
+    public DynamicStringList(){
+        arr = new String[10];
+    }
 
     /**
      * Retrieves the string at the specified index in the list.
@@ -39,8 +45,8 @@ public class DynamicStringList implements StringList {
      * @param value the string to add to the list.
      */
     public void add(String value) {
-    
-
+        arr[acutalLength] = value;
+        acutalLength++;
     }
 
     /**
@@ -55,9 +61,14 @@ public class DynamicStringList implements StringList {
         if(index <0 || index >=size()){
             throw new IndexOutOfBoundsException();
         }
-        for(int i =0; i<acutalLength; i--)
+        String removed = arr[index];
+        for(int i =index; i<acutalLength-1; i+=1){
+            arr[i] = arr[i+1];
+        }
 
-        return null;
+            acutalLength --;
+
+        return removed ;
     }
 
     /**
