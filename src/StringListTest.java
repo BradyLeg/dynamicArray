@@ -65,4 +65,15 @@ public class StringListTest {
         assertEquals(20, capacity);
     }
 
+    @Test
+    void testGet_realElement() {
+        DynamicStringList arrList = new DynamicStringList();
+
+        arrList.add("brady");
+        arrList.add("beza");
+        String value = arrList.get(0);
+
+        assertEquals("brady", value);
+    }
+
 }
