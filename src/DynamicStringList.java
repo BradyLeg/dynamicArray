@@ -1,9 +1,9 @@
 public class DynamicStringList implements StringList {
     public String[] arr;
-    public int acutalLength;
+    public int acutalLength = 0;
 
     public DynamicStringList() {
-
+        arr = new String[10];
     }
 
     /**
