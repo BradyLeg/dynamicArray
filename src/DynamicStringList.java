@@ -1,6 +1,6 @@
 public class DynamicStringList implements StringList {
     public String[] arr;
-    public int acutalLength = 0;
+    public int actualLength =0;
 
     public DynamicStringList() {
         arr = new String[10];
@@ -50,8 +50,8 @@ public class DynamicStringList implements StringList {
             }
             arr = newArray;
         }
-        arr[acutalLength] = value;
-        acutalLength++;
+        arr[actualLength] = value;
+        actualLength++;
     }
 
     /**
@@ -67,11 +67,13 @@ public class DynamicStringList implements StringList {
             throw new IndexOutOfBoundsException();
         }
         String removed = arr[index];
-        for (int i = index; i < acutalLength - 1; i += 1) {
-            arr[i] = arr[i + 1];
+
+        for(int i =index; i<actualLength-1; i+=1){
+            arr[i] = arr[i+1];
         }
 
-        acutalLength--;
+            actualLength --;
+
 
         return removed;
     }
@@ -82,7 +84,7 @@ public class DynamicStringList implements StringList {
      * @return the size of the list.
      */
     public int size() {
-        return acutalLength;
+        return actualLength;
     }
 
     /**
