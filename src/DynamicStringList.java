@@ -39,8 +39,16 @@ public class DynamicStringList implements StringList {
      * @param value the string to add to the list.
      */
     public void add(String value) {
+        if (size() == capacity()) {
+            String[] newArray = new String[capacity() * 2];
+            for (int i = 0; i < arr.length; i++) {
+                newArray[i] = arr[i];
+            }
+            arr = newArray;
+        }
         arr[acutalLength] = value;
         acutalLength++;
+
     }
 
     /**
@@ -71,6 +79,6 @@ public class DynamicStringList implements StringList {
      * @return the capacity of the list.
      */
     public int capacity() {
-        return -1;
+        return arr.length;
     }
 }
