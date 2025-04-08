@@ -48,7 +48,6 @@ public class DynamicStringList implements StringList {
         }
         arr[acutalLength] = value;
         acutalLength++;
-
     }
 
     /**
