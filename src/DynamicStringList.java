@@ -15,7 +15,10 @@ public class DynamicStringList implements StringList {
      *                                   index >= size()).
      */
     public String get(int index) {
-        return null;
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException();
+        }
+        return arr[index];
     }
 
     /**
