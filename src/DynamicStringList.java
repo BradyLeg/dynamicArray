@@ -60,7 +60,7 @@ public class DynamicStringList implements StringList {
      * @return the size of the list.
      */
     public int size() {
-        return -1;
+        return acutalLength;
     }
 
     /**
