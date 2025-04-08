@@ -1,10 +1,8 @@
-import javax.imageio.IIOException;
-
 public class DynamicStringList implements StringList {
     public String[] arr;
     public int actualLength =0;
 
-    public DynamicStringList(){
+    public DynamicStringList() {
         arr = new String[10];
     }
 
@@ -32,7 +30,7 @@ public class DynamicStringList implements StringList {
      *                                   index >= size()).
      */
     public void set(int index, String value) {
-        if(index <0 || index >=size()){
+        if (index < 0 || index >= size()) {
             throw new IndexOutOfBoundsException();
         }
         arr[index] = value;
@@ -65,17 +63,19 @@ public class DynamicStringList implements StringList {
      *                                   index >= size()).
      */
     public String remove(int index) {
-        if(index <0 || index >=size()){
+        if (index < 0 || index >= size()) {
             throw new IndexOutOfBoundsException();
         }
         String removed = arr[index];
+
         for(int i =index; i<actualLength-1; i+=1){
             arr[i] = arr[i+1];
         }
 
             actualLength --;
 
-        return removed ;
+
+        return removed;
     }
 
     /**
